@@ -1,0 +1,6 @@
+{
+  "name": "Workflow Workshop",
+  "description": "A Front-End automation example project.",
+  "image": "heroku/nodejs",
+  "addons": []
+}
