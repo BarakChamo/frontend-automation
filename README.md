@@ -1,19 +1,53 @@
-# Frontend Automation
-Workshop on Front-end Development Automation
+# Front-End Automation
+Workshop on Front-End Development Automation with Webpack and Docker.
 
+This is the excercise and demo repo for the Front-End Automation talk and workshop.
+It provides the steps for setting up a basic, isolted automated development enviroment
+power by Webpack and contained inside a Docker container.
 
-# To build docker container
-$ docker build -t workflow-docker .
+## Following the workshop
 
-# To run in development development
-$ docker run --name my-webpack-docker -p 80:4000 -e NODE_ENV=dev webpack-docker
+#### Clone the repo's initial branch
 
-# For deployment
-$ docker run --name my-webpack-docker -p 80:4000 webpack-docker
+`git clone https://github.com/BarakChamo/frontend-automation.git`
 
-# To view the application, you need to know the ip address of your virtual machine
-$ docker-machine ip default
+#### Follow workshop instructions
 
-docker run -e NODE_ENV=dev workflow-docker
+Step-by-step instructions to setting up the development environment are available in README files in the `steps` folder of the repository. 
 
-eval $(docker-machine env default)
+## Running the complete development environment
+
+#### Building the docker container
+From the project folder, run:
+
+```$ docker build -t workflow-docker .```
+
+<br />
+#### To run the environment in ```development``` mode
+```$ docker run --name my-webpack-docker -p 80:4000 -e NODE_ENV=dev webpack-docker```
+
+<br />
+####  run the environment in ```production``` mode
+```$ docker run --name my-webpack-docker -p 80:4000 webpack-docker```
+
+<br />
+#### To launch the app, you need to know the ip address of the virtual machine
+##### Run the following in your terminal to get the machine's ip:
+
+```$ docker-machine ip default```
+
+<br />
+##### Run the development container:
+
+```docker run -e NODE_ENV=dev workflow-docker```
+
+<br />
+##### Evaluate the development container's envvariables.
+
+On OSX/Linux:
+
+```eval $(docker-machine env default)```
+
+On Windows:
+
+```docker-machine.exe env --shell cmd dev```
