@@ -1,19 +1,35 @@
 # Frontend Automation
 Workshop on Front-end Development Automation
 
+## Following the workshop
 
-# To build docker container
-$ docker build -t workflow-docker .
+## Running the complete development environment
 
-# To run in development development
-$ docker run --name my-webpack-docker -p 80:4000 -e NODE_ENV=dev webpack-docker
+#### Building the docker container
+From the project folder, run:
 
-# For deployment
-$ docker run --name my-webpack-docker -p 80:4000 webpack-docker
+```$ docker build -t workflow-docker .```
 
-# To view the application, you need to know the ip address of your virtual machine
-$ docker-machine ip default
+#### To run the environment in ```development``` mode
+```$ docker run --name my-webpack-docker -p 80:4000 -e NODE_ENV=dev webpack-docker```
 
-docker run -e NODE_ENV=dev workflow-docker
+####  run the environment in ```production``` mode
+```$ docker run --name my-webpack-docker -p 80:4000 webpack-docker```
 
-eval $(docker-machine env default)
+#### To launch the app, you need to know the ip address of the virtual machine
+Run the following in your terminal to get the machine's ip:
+
+```$ docker-machine ip default```
+
+Run the development container:
+
+```docker run -e NODE_ENV=dev workflow-docker```
+
+Evaluate the development container's envvariables.
+
+On OSX/Linux:
+
+```eval $(docker-machine env default)```
+
+On Windows:
+```docker-machine.exe env --shell cmd dev```
