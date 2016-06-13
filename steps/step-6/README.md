@@ -20,19 +20,94 @@ Docker containers consume a single configuration file, a `Dockerfile`. Much like
 
 You can check out the full configuration file [here.](https://github.com/BarakChamo/frontend-automation/blob/master/steps/step-6/Dockerfile)
 
+Let's go through and understand each part of the Dockerfile:
+
+```yml
+# Build the container on top of an existing container running node.js version 5.9.0
+FROM node:5.9.0
+
+# Go to the /tmp directory (like cd ___ in linux)
+WORKDIR /tmp
+
+# Add the package.json file from our local folder to the /tmp/ folder in the container
+ADD package.json /tmp/
+
+# Configure npm to use a private registry (improves npm install performance)
+# then run npm install to install project dependencies
+RUN npm config set registry http://registry.npmjs.org/ && npm install -q --production
+
+# Move the the app directory
+WORKDIR /usr/src/app
+
+# Link the contents of the current local folder to the app directory in the container
+ADD . /usr/src/app/
+
+# Copy the installed node_modules to the app directory
+RUN cp -a /tmp/node_modules /usr/src/app/
+
+# Run the NPM build script (our own defined build command)
+RUN npm run build
+
+# Default to a production environment 
+ENV NODE_ENV=production
+
+# Set the default port for the server to 8080
+ENV PORT=8080
+
+# Run the command `npm start`
+CMD [ "/usr/local/bin/npm", "start" ]
+
+# Expose port 8080 to the local machine
+EXPOSE 8080
+
+```
+
 
 <br/>
-#### Running a custom configuration
+#### Running a Docker container
 
-By default, when running the `webpack` command it will look for a file called `webpack.config.js`. To override the default configuration with out custom one we call the command with an additional paramter:
+##### Start the VM
+First, we need to start the virtual machine if it's not already running:
 
-For development:
+`docker-machine start default`
 
-```webpack --config webpack.config.dev.js```
+Once `docker-machine` is running we need to find out it's IP, this is a different process depending on your OS:
 
-And for production:
+On Mac/Linux:
 
-```webpack --config webpack.config.prod.js```
+`eval $(docker-machine env default)`
+
+On Windows (in cmd):
+
+`docker-machine.exe env --shell cmd dev`
+
+<br/>
+##### Start Docker
+
+We're now ready to start the docker container. Run the following:
+
+`docker run -p 80:8080 -e NODE_ENV=development workflow-docker`
+
+We're telling docker to start the container, map port `8080` in the container to the local port `80` and set the environment to `development`, not the default `production`.
+
+Our development environment is now running inside the container, exposing a port for us to access the web app and listening for changes on our local files!
+
+
+#### Accessing the container
+
+To access the web app run the following command in your terminal:
+
+On Mac/Linux:
+`open http://$(docker-machine ip default)`
+
+On Windows:
+`docker-machine.exe env --shell cmd dev`
+
+and then
+
+`explorer {ip}`
+
+or simply go to the container's ip in your browser.
 
 
 # Workshop Excercise
