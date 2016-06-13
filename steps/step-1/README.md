@@ -50,3 +50,7 @@ To build the bundle run the `webpack` command in the root folder of `step-1`, We
 #### Testing the build
 
 Open `index.html` in your browser, check that `Hello World` has been rendered correctly.
+
+# Workshop Excercise
+
+Excercise details
