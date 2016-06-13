@@ -3,8 +3,7 @@ var webpack = require('webpack');
 module.exports = {
   entry: {
     app: [
-      './app/index.js',
-      'webpack-hot-middleware/client?reload=true'
+      './app/index.js'
     ]
   },
 
@@ -36,6 +35,6 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    
   ]
 };
