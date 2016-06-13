@@ -78,3 +78,7 @@ Open `[http://localhost:8080](http://localhost:8080)` in your browser, you shoul
 To see the real power of the middlewares, try making changes to the source files.
 
 For example, change the background color of the list items to blue, to bundle will be automatically compiled and the browser refreshed!
+
+# Workshop Excercise
+
+Excercise details
