@@ -1,20 +1,24 @@
-## Workshop Step 5
-###### Production and development optimizations
+## Workshop Step 6
+###### Containing the development environment
 
-On top of it's core functionality, webpack provides a lot of very useful plugins - some are good for development and others are good for production builds. Examples are the hot swapping plugin or the source minification plugin.
+Our Webpack configuration is complete, but though it's automated it depends on quite a lot of local configuration and tools being available:
 
-A good practice it to define a base `webpack.config.js` that defines the common parts of our project: the entry point, output folder, etc.
+1. Node.js and NPM must be installed and up-to-date
+2. Webpack needs to be installed globally
+3. Our configuration was only tested on our machine, our OS and our versions of all tools
 
-Then, define 2 additional configurations: `webpack.config.prod.js` and `webpack.config.dev.js`. These will add additional production and development functionality respectively and will not clash with each other. We can have source maps when we need them, and we can crunch our code and minify it when we want to.
+Not only that, we have yet to discuss deploying our code to a production server. What ports will be available to the server? Where will we get them? What version of node is installed if any?
+
+The next step in automating and streamlining our development process is isolating our development environment from our local machine, those of our peers and the production servers.
+
+To do that we'll use Docker, a popular containerization toolset. You can read more about Docker [here](https://www.docker.com/what-docker).
 
 <br/>
-#### Splitting the webpack configuration
+#### Defining our container
 
-Note the 2 new configuration files in this folder: `webpack.config.prod.js` and `webpack.config.dev.js`.
+Docker containers consume a single configuration file, a `Dockerfile`. Much like webpack, we'll use this one file to describe everything Docker needs to know to run our development server inside a virtual machine.
 
-Both of these new files require the base `webpack.config.js` as a dependency and have access to the configuration object.
-
-We can then add specific functionality for each scenario, development and production, separately.
+You can check out the full configuration file [here.](https://github.com/BarakChamo/frontend-automation/blob/master/steps/step-6/Dockerfile)
 
 
 <br/>
