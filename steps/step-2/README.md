@@ -81,3 +81,7 @@ Don't forget to re-run `webpack` to bundle the updated files.
 #### Testing the build
 
 Open `index.html` in your browser, check that the list of styled programming languages and their creators has been rendered correctly.
+
+# Workshop Excercise
+
+Excercise details
