@@ -5,6 +5,16 @@ This is the excercise and demo repo for the Front-End Automation talk and worksh
 It provides the steps for setting up a basic, isolted automated development enviroment
 power by Webpack and contained inside a Docker container.
 
+## Prequisites
+
+The Front-End environment built in this workshop is driven by Webpack and Docker. You must have **node.js**, **npm** and **docker** installed to follow the steps and run the builds.
+
+[Installing Node.js](https://nodejs.org/en/download/)
+
+[Installing NPM](https://docs.npmjs.com/getting-started/installing-node)
+
+[Installing Docker](https://docs.docker.com/)
+
 ## Following the workshop
 
 #### Clone the repo's initial branch
@@ -14,6 +24,10 @@ power by Webpack and contained inside a Docker container.
 #### Follow workshop instructions
 
 Step-by-step instructions to setting up the development environment are available in README files in the `steps` folder of the repository. 
+
+#### Complete solutions for each step
+
+Each step branch poses a small challenge in configuring webpack and automating front-end development. If you want to see the full and *'solved'* configuration look at the code for each step in the `master` branch of this repository.
 
 ## Running the complete development environment
 

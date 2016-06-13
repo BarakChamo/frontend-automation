@@ -1,4 +1,4 @@
-## Workshop Step 1
+## Workshop Step 2
 ###### Using loaders and importing related assets
 
 Now that Webpack is configured, it's time to start using it's more powerful features, starting with module loaders.
@@ -37,23 +37,47 @@ Handlebars is a templating language written in HTML-like syntax, the template fi
 
 In the configuration file, in the entry matching `.html` in `modules.loaders`, specify the correct loader for the file type - `handlebars`.
 
-Now let's move on to a more complicated example, loading SASS stylesheets:
-
+<br/>
 ##### SASS
 
+Let's now move on to a more complicated example, loading SASS stylesheets:
 
+To load SASS stylesheets into our project we'll have to use a combination of 3 different loaders:
 
-##### ES6 with Babel
+1. A `SASS` loader to compile the stylesheets.
+2. A `CSS` loader to read the results of the compiled CSS file.
+3. A `Style` loader to load the stylesheet in the browser as part of the bundle.
 
-
+To do so, we'll have to specify a series of loaders. In the configuration file, notice that the `.scss` entry has a place holder for a `loaders` array instead of a single `loader`, go ahead and specify the loaders in reverse order from the last step to the first. The order of the loaders is the order of operations the processed file will be piped through.
 
 <br/>
-#### Building the bundle
+##### ES6 with Babel
 
-To build the bundle run the `webpack` command in the root folder of `step-1`, Webpack will automatically detect the configuration file.
+Finally, we want to process and transpile our JavaScript. To do so we'll load our JavaScript files using the `babel` loader but we'll have to configure Babel to transpile using the `babel-preset-es2015` that we installed earlier from `npm`.
 
+In the configuration file look at the entry matching `.js` and `.jsx` files, apply the correct loader.
+
+We also need to pass in some configuration parameters through the `query` key. In the `presets` specify that we want to use the `es2015` loader, that will make babel load files through the `babel-preset-es2015` preset.
+
+<br/>
+#### Loading assets in JavaScript
+
+Let's go through the code of `index.js` in the `app` folder and see what happens:
+
+1. SASS stylesheets are imported directly in our JS code
+2. HTML templates are also imported directly
+3. We're using ES6 features in browser code
+
+This is one of the coolest features of webpack, we're able to load stylesheets and templates directly from out JavaScript code! This means that a JavaScript will have all of its dependencies declared directly in code.
+
+
+This simple snippet will load the styles and the template and render the template for each programming language in the array.
+
+Go ahead and make some changes to the template and stylesheet in `style.scss` and `template.html`, you can also add another programming language in the array to see what happens.
+
+Don't forget to re-run `webpack` to bundle the updated files.
 
 <br/>
 #### Testing the build
 
-Open `index.html` in your browser, check that `Hello World` has been rendered correctly.
+Open `index.html` in your browser, check that the list of styled programming languages and their creators has been rendered correctly.
