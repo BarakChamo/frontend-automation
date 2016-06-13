@@ -13,6 +13,10 @@ The Webpack bundler is installed globally by running the following command:
 
 You might have to run it in administrator mode, depening on your user's permissions.
 
+We also need to install webpack locally to make it available to our configuration file.
+
+`npm install webpack --save-dev`
+
 <br/>
 #### Entry points and output bundles
 
@@ -23,6 +27,8 @@ Likewise, configure the output `path` and `filename` so that our bundle will be 
 
 <br/>
 #### Building the bundle
+
+Looking through `index.js`, you'll notice our main file requires two additional modules, `hello.js` and `render.js`, we must bundle them together to be able to run this code in the browser.
 
 To build the bundle run the `webpack` command in the root folder of `step-1`, Webpack will automatically detect the configuration file.
 
