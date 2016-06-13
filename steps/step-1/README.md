@@ -24,6 +24,8 @@ Likewise, configure the output `path` and `filename` so that our bundle will be 
 <br/>
 #### Building the bundle
 
+Looking through `index.js`, you'll notice our main file requires two additional modules, `hello.js` and `render.js`, we must bundle them together to be able to run this code in the browser.
+
 To build the bundle run the `webpack` command in the root folder of `step-1`, Webpack will automatically detect the configuration file.
 
 
