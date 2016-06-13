@@ -112,8 +112,4 @@ or simply go to the container's ip in your browser.
 
 # Workshop Excercise
 
-Update production config
-
-Update development config
-
-Update development server to use webpack.config.dev.js instead of webpack.config.js
+Go ahead and run the docker container now, access it in the browser once it's up to see that it's working.
