@@ -1,57 +1,47 @@
-## Workshop Step 1
-###### Using loaders and importing related assets
+## Workshop Step 4
+###### Chunk Splitting
 
-Now that Webpack is configured, it's time to start using it's more powerful features, starting with module loaders.
+Let's consider at a *'real world'* example of a JavaScript single page application.
 
-Module loaders allow us to define a chain of processing by file type, similar to a **Grunt** or **Gulp** workflow.
-A processing chain is typically defined by file extension, let's look at a more advanced example using ES6 JavaScript and LESS Styles.
+<br/>
+#### Chunk Splitting
 
+The simplest way to get Webpack to watch our files is to run it in `watch` mode. Try running the following command in your terminal:
 
-#### Installing the Loaders
+`webpack -w`
 
-We'll be using **Babel** to *transpile* ES6 JavaScript to browser-safe ES5, **Handlebards** to build our template file and **SASS** to compile our SCSS stylesheet to CSS.
+Running webpack with the `w` flag will tell it to keep running, watch for file changes and re-build automatically. This means we can keep working on our project without having to worry about going back to the terminal and re-running webpack every time we update our code.
 
-Start by installing the following NPM packages:
-
-```
-# Babel and Babel Loader packages
-npm install babel-core babel-loader babel-preset-es2015 --save-dev
-
-# Handlebars and Handlebars Loader
-npm install handlebars handlebars-loader --save-dev
-
-# Handlebars and Handlebars Loader
-npm install node-sass css-loader sass-loader style-loader --save-dev
-```
+Try running webpack in watch mode and making a change to the stylesheet in `style.scss`, if you look at the terminal you'll notice webpack ran again and built our updated bundle automatically.
 
 
 <br/>
-#### Configuring module loaders
+#### Webpack Dev Server & Dev Middleware
 
-We'll be configuring loaders for 3 different file types: `.js`, `.scss` and `.html`. Look at the `webpack.config.js` and you'll notice placeholders are set up for each of the file types. Let's set each one up.
+Running webpack in watch mode is already pretty handy but we have to run it as a separate task in addition to our development server, manually refresh the browser and we might have problems serving async AJAX requests from JavaScript because our files are served from a different port to the one we run our server on.
 
+Let's look at a better, more robust solution for integrating webpack seamlessly into our Node.js server.
 
-##### Handlebars
+##### What is the Webpack development server?
+Webpack's development server and the node.js development middleware allow us to integrate webpack's build process into a static asset pipeline in an existing Node.js application.
 
-Handlebars is a templating language written in HTML-like syntax, the template files need to be compiled into JavaScript functions so that we'll be able to render on the fly. To do that, we'll pass required `.html` files through the handlebards loaders.
+When running our server in `development mode`, requests for static assets will go through wepack and processed on-the-fly. When running in `production mode`, static assets will be served from a pre-compiled cache, just like when we run the `webpack` command.
 
-In the configuration file, in the entry matching `.html` in `modules.loaders`, specify the correct loader for the file type - `handlebars`.
+This allows for a seamless workflow that is the same on both production and development. All we have to do to run the build environment is run our server in development mode, no other manual processes are necessary and no other terminal windows to keep track of.
 
-Now let's move on to a more complicated example, loading SASS stylesheets:
-
-##### SASS
-
-
-
-##### ES6 with Babel
-
-
+Combined with Webpack's hot-reload middleware, we won't even have to refresh our browser. When files change they will be automatically re-compiled and the browser will be refreshed.
 
 <br/>
-#### Building the bundle
+##### Setting up the middlewares
 
-To build the bundle run the `webpack` command in the root folder of `step-1`, Webpack will automatically detect the configuration file.
+Start by installing the 2 node packages:
 
+```
+npm install webpack-dev-middleware webpack-hot-middleware --save-dev
+```
+
+<br/>
+#### Running the server
 
 <br/>
 #### Testing the build
