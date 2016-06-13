@@ -1,0 +1,11 @@
+{{#each images}}
+  <div class="row">
+    {{#each this}}
+    <div class="col-xs-4">
+      <a href="/image/{{index}}">
+        <img class="img-thumbnail" src="{{src}}"/>
+      </a>
+    </div>
+    {{/each}}
+  </div>
+{{/each}}
