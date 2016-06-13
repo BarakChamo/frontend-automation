@@ -68,6 +68,9 @@ Let's go through the code of `index.js` in the `app` folder and see what happens
 2. HTML templates are also imported directly
 3. We're using ES6 features in browser code
 
+This is one of the coolest features of webpack, we're able to load stylesheets and templates directly from out JavaScript code! This means that a JavaScript will have all of its dependencies declared directly in code.
+
+
 This simple snippet will load the styles and the template and render the template for each programming language in the array.
 
 Go ahead and make some changes to the template and stylesheet in `style.scss` and `template.html`, you can also add another programming language in the array to see what happens.
@@ -77,4 +80,4 @@ Don't forget to re-run `webpack` to bundle the updated files.
 <br/>
 #### Testing the build
 
-Open `index.html` in your browser, check that `Hello World` has been rendered correctly.
+Open `index.html` in your browser, check that the list of styled programming languages and their creators has been rendered correctly.
