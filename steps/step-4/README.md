@@ -1,7 +1,7 @@
 ## Workshop Step 4
 ###### Chunk Splitting
 
-Let's consider at a *'real world'* example of a JavaScript single page application. 
+Let's consider at a *'real world'* example of a JavaScript single page application.
 
 When handling front-end routing we enable the user to access different parts of the application without reloading the page. The problem is that when we bundle JavaScript assets, all the routes end up being bundled into one big file that has to support any possible route of the application.
 
@@ -84,6 +84,10 @@ Going back to our previous example:
   })
 ```
 
+Instead of simply requiring a module with `require('module')` we now call `require.ensure([])` with a list of modules we require to be loaded asyncronously. The modules will be loaded and only then will the callback function be called.
+
+Within that callback we can require again, syncronously, and the modules will be available to us.
+
 <br/>
 #### Running the server
 
@@ -92,4 +96,8 @@ Besides updating the code to support split chunks, there is absolutely no config
 
 # Workshop Excercise
 
-Excercise details
+- Review the routing code in index.js, it requires a module in each route callback and calls the resulting module to generate the template.
+
+- Update that code using the `require.ensure` syntax to activate code splitting.
+
+- Run the server (`node server.js`) and test the result.
