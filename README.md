@@ -35,7 +35,8 @@ Each step branch poses a small challenge in configuring webpack and automating f
 2. [Module loaders and inline asset requirements](https://github.com/BarakChamo/frontend-automation/tree/master/steps/step-2)
 3. [Webpack Dev Server](https://github.com/BarakChamo/frontend-automation/tree/master/steps/step-3)
 4. [Module Chunk Splitting](https://github.com/BarakChamo/frontend-automation/tree/master/steps/step-4)
-5. []()
+7. [Production & Development configurations](https://github.com/BarakChamo/frontend-automation/tree/master/steps/step-5)
+6. [Docker containerization](https://github.com/BarakChamo/frontend-automation/tree/master/steps/step-6)
 
 ## Running the complete development environment
 
