@@ -92,7 +92,7 @@ We're telling docker to start the container, map port `8080` in the container to
 
 Our development environment is now running inside the container, exposing a port for us to access the web app and listening for changes on our local files!
 
-
+<br/>
 #### Accessing the container
 
 To access the web app run the following command in your terminal:
