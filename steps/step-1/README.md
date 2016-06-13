@@ -1,7 +1,7 @@
 ## Workshop Step 1
 ###### Setting up Webpack and basic module loading
 
-In this part of the workshop we'll set up the Webpack config file, 
+In this part of the workshop we'll set up the Webpack config file,
 `webpack.config.js`, to load the correct files and output the processed bundle to the correct place.
 
 
@@ -18,11 +18,24 @@ We also need to install webpack locally to make it available to our configuratio
 `npm install webpack --save-dev`
 
 <br/>
+#### The Webpack configuration file
+
+Webpack operates on a set of instructions defined in the `webpack.config.js` file in the root of our project. When we run the `webpack` command it will look for that file for instructions on how to process our code.
+
+These instructions include:
+1. The location of the entry point, the first JS file in our project.
+2. The output directory for the processed bundle.
+3. Any module loaders and how to use them.
+4. Webpack plugins
+
+We'll cover the basics of getting an initial configuration up and running.
+
+<br/>
 #### Entry points and output bundles
 
 To get started, open `webpack.config.js` and fill in the path in `entry.app`, direct it to the `index.js` file in our `app` folder.
 
-Likewise, configure the output `path` and `filename` so that our bundle will be generated as a file named `bundle.js` in the `dist` folder. 
+Likewise, configure the output `path` and `filename` so that our bundle will be generated as a file named `bundle.js` in the `dist` folder.
 
 
 <br/>
@@ -37,4 +50,3 @@ To build the bundle run the `webpack` command in the root folder of `step-1`, We
 #### Testing the build
 
 Open `index.html` in your browser, check that `Hello World` has been rendered correctly.
-
