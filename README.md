@@ -10,7 +10,9 @@ power by Webpack and contained inside a Docker container.
 The Front-End environment built in this workshop is driven by Webpack and Docker. You must have **node.js**, **npm** and **docker** installed to follow the steps and run the builds.
 
 [Installing Node.js](https://nodejs.org/en/download/)
+
 [Installing NPM](https://docs.npmjs.com/getting-started/installing-node)
+
 [Installing Docker](https://docs.docker.com/)
 
 ## Following the workshop
