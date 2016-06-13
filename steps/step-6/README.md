@@ -48,7 +48,7 @@ RUN cp -a /tmp/node_modules /usr/src/app/
 # Run the NPM build script (our own defined build command)
 RUN npm run build
 
-# Default to a production environment 
+# Default to a production environment
 ENV NODE_ENV=production
 
 # Set the default port for the server to 8080
@@ -112,4 +112,8 @@ or simply go to the container's ip in your browser.
 
 # Workshop Excercise
 
-Go ahead and run the docker container now, access it in the browser once it's up to see that it's working.
+- Run docker machine and evaluate it's IP parameters
+
+- Run the docker container in `development` mode, exposing it's port `8080` to the local machine's port `80`
+
+- Open the machine's ip in your local browser to test the container is running properly.
