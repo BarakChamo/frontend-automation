@@ -15,6 +15,10 @@ power by Webpack and contained inside a Docker container.
 
 Step-by-step instructions to setting up the development environment are available in README files in the `steps` folder of the repository. 
 
+#### Complete solutions for each step
+
+Each step branch poses a small challenge in configuring webpack and automating front-end development. If you want to see the full and *'solved'* configuration look at the code for each step in the `master` branch of this repository.
+
 ## Running the complete development environment
 
 #### Building the docker container
