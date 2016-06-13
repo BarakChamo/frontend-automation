@@ -27,7 +27,7 @@ Step-by-step instructions to setting up the development environment are availabl
 
 #### Complete solutions for each step
 
-Each step branch poses a small challenge in configuring webpack and automating front-end development. If you want to see the full and *'solved'* configuration look at the code for each step in the `master` branch of this repository.
+Each step branch poses a small challenge in configuring webpack and automating front-end development. You can try the challenges by checking out the [`workshop`](https://github.com/BarakChamo/frontend-automation/tree/workshop) branch. If you want to see the full and *'solved'* configuration look at the code for each step in the [`master`](https://github.com/BarakChamo/frontend-automation/tree/master) branch of this repository.
 
 ### Workshop Chapters
 
