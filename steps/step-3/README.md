@@ -39,6 +39,16 @@ Start by installing the 2 node packages:
 npm install webpack-dev-middleware webpack-hot-middleware --save-dev
 ```
 
+Then open the `server.js` file in the root folder, it is a reference implementation of a dual `dev/prod` server with the middlewares set up.
+
+In [line 12](https://github.com/BarakChamo/frontend-automation/blob/master/steps/step-3/server.js#L12), we start by checking if the server is running in development mode by reading the value of the environment variable `NODE_ENV`.
+
+Then, in [lines 13 to 34](https://github.com/BarakChamo/frontend-automation/blob/master/steps/step-3/server.js#L13-L34) we import the webpack configuration file and pass it to the development middleware.
+
+Calling `app.use` is `Express`'s way of handling requests, it means that any request for a static file will be intercepted by the webpack middleware and fullfilled on-the-fly from the build system, not the cached files that are used in production.
+
+Finally, in [lines 35 to 37](https://github.com/BarakChamo/frontend-automation/blob/master/steps/step-3/server.js#L35-L37) we handle production mode, where we serve files from a pre-compiled static folder.
+
 <br/>
 #### Running the server
 
