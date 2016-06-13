@@ -90,6 +90,6 @@ Going back to our previous example:
 Besides updating the code to support split chunks, there is absolutely no configuration necessary. Webpack will handle the splitting in development time and the loading in runtime.
 
 
-### Workshop Excercise
+# Workshop Excercise
 
 Excercise details
