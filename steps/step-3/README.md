@@ -50,9 +50,31 @@ Calling `app.use` is `Express`'s way of handling requests, it means that any req
 Finally, in [lines 35 to 37](https://github.com/BarakChamo/frontend-automation/blob/master/steps/step-3/server.js#L35-L37) we handle production mode, where we serve files from a pre-compiled static folder.
 
 <br/>
+##### Configuring Webpack for use by the middlewares
+
+There are a few updates we must make to the `webpack.config.js` in order to get it to work well in a development server scenario.
+
+Open the configuration file and let's make 2 small updates:
+
+1. Add the `new webpack.HotModuleReplacementPlugin()` plugin in the plugins array of the configuration file.
+2. Change the `app` entry point from a string to an array of strings and add `webpack-hot-middleware/client?reload=true`
+
+This will enable webpack to accept request from the middleware endpoint and serve partial modules after they update.
+
+
+<br/>
 #### Running the server
+
+To run the server in development mode, simply run `node server.js` in your console from the root folder of this step.
 
 <br/>
 #### Testing the build
 
-Open `index.html` in your browser, check that `Hello World` has been rendered correctly.
+Open `[http://localhost:8080](http://localhost:8080)` in your browser, you should see the same list of programming languages.
+
+<br/>
+#### Testing the middlewares
+
+To see the real power of the middlewares, try making changes to the source files.
+
+For example, change the background color of the list items to blue, to bundle will be automatically compiled and the browser refreshed!
