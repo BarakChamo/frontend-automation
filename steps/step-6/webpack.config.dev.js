@@ -24,10 +24,8 @@ config.entry.app.push('webpack-hot-middleware/client?reload=true');
  * Add Development Plugins
  */
 
-config.plugins.push(
-  new webpack.HotModuleReplacementPlugin(),
-  new webpack.NoErrorsPlugin()
-);
+config.plugins.push( new webpack.HotModuleReplacementPlugin() );
+config.plugins.push( new webpack.NoErrorsPlugin() );
 
 // Re-export updated configuration
 module.exports = config;

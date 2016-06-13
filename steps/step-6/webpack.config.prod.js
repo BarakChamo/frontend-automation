@@ -10,11 +10,8 @@ var config = require('./webpack.config.js');
  * Production optimization plugins
  */
 
- config.plugins.push(
-   new webpack.optimize.OccurenceOrderPlugin(),
-   new webpack.optimize.UglifyJsPlugin(),
-   new webpack.optimize.optimizeChunks()
- );
+ config.plugins.push( new webpack.optimize.OccurenceOrderPlugin() );
+ config.plugins.push( new webpack.optimize.UglifyJsPlugin() );
 
 // Re-export updated configuration
 module.exports = config;
