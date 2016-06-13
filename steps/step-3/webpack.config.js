@@ -2,12 +2,15 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: {
-    app: './app/index.js'
+    app: [
+      './app/index.js',
+      'webpack-hot-middleware/client?reload=true'
+    ]
   },
 
   output: {
-    publicPath:'/',
-    path: 'dist',
+    publicPath:'/dist/',
+    path: __dirname + '/dist',
     filename: 'bundle.js',
   },
 
@@ -33,6 +36,6 @@ module.exports = {
   },
 
   plugins: [
-    // Plugins
+    new webpack.HotModuleReplacementPlugin()
   ]
 };

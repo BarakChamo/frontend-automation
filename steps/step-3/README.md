@@ -21,8 +21,23 @@ Running webpack in watch mode is already pretty handy but we have to run it as a
 
 Let's look at a better, more robust solution for integrating webpack seamlessly into our Node.js server.
 
+##### What is the Webpack development server?
+Webpack's development server and the node.js development middleware allow us to integrate webpack's build process into a static asset pipeline in an existing Node.js application.
 
+When running our server in `development mode`, requests for static assets will go through wepack and processed on-the-fly. When running in `production mode`, static assets will be served from a pre-compiled cache, just like when we run the `webpack` command.
 
+This allows for a seamless workflow that is the same on both production and development. All we have to do to run the build environment is run our server in development mode, no other manual processes are necessary and no other terminal windows to keep track of.
+
+Combined with Webpack's hot-reload middleware, we won't even have to refresh our browser. When files change they will be automatically re-compiled and the browser will be refreshed.
+
+<br/>
+##### Setting up the middlewares
+
+Start by installing the 2 node packages:
+
+```
+npm install webpack-dev-middleware webpack-hot-middleware --save-dev
+```
 
 <br/>
 #### Running the server
