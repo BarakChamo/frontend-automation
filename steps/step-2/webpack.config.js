@@ -14,13 +14,13 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.html$/, loader: 'handlebars'
+        test: /\.html$/, loader: ''
       },
       {
-        test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader']
+        test: /\.scss$/, loaders: []
       },
       {
-        test: /\.jsx?$/, exclude: /(node_modules)/, loader: 'babel', query: {presets: ['es2015']}
+        test: /\.jsx?$/, exclude: /(node_modules)/, loader: '', query: {}
       }
     ]
   },

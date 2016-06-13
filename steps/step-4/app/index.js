@@ -28,18 +28,18 @@ function applyRoute(ctx){
 }
 
 // Image view route
-page('image/:image', (ctx, next) => require.ensure(['./routes/image.js'], function(require){
+page('image/:image', (ctx, next) => {
   var imageRoute = require('./routes/image.js');
   ctx.route = imageRoute(ctx);
   next();
-}), applyRoute);
+}, applyRoute);
 
 // Index Route (redirect all other ones here)
-page('/', (ctx, next) => require.ensure(['./routes/index.js'], function(require){
+page('/', (ctx, next) => {
   var indexRoute = require('./routes/index.js');
   ctx.route = indexRoute();
   next();
-}), applyRoute);
+}, applyRoute);
 
 
 // Bootstrap page

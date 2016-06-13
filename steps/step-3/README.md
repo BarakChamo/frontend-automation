@@ -79,6 +79,15 @@ To see the real power of the middlewares, try making changes to the source files
 
 For example, change the background color of the list items to blue, to bundle will be automatically compiled and the browser refreshed!
 
+<br/>
 # Workshop Excercise
 
-Excercise details
+To configure hot reloading:
+
+- Add `'webpack-hot-middleware/client?reload=true'` to the list of entry points for `app`.
+
+- Add the `new webpack.HotModuleReplacementPlugin()` to the list of running plugins.
+
+- Run the development server `node server.js` and open it in the browser to see the result.
+
+- Try changing the styles and watch them auto-reload in the browser.
