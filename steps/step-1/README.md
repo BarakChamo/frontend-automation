@@ -13,6 +13,10 @@ The Webpack bundler is installed globally by running the following command:
 
 You might have to run it in administrator mode, depening on your user's permissions.
 
+We also need to install webpack locally to make it available to our configuration file.
+
+`npm install webpack --save-dev`
+
 <br/>
 #### Entry points and output bundles
 
