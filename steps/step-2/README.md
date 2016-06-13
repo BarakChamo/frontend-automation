@@ -84,4 +84,10 @@ Open `index.html` in your browser, check that the list of styled programming lan
 
 # Workshop Excercise
 
-Excercise details
+- Add the `handlebars-loader` to the HTML loader, you only need to specify the loader name, not the full `-loader`.
+
+- Add all the necessary SCSS loaders: Style, CSS and SCSS in the correct order in the loaders array.
+
+- Add the `babel-loader` to the JS loader, you must also specify the right parameters to user the `es2015-preset`.
+
+- Run webpack and open `index.html` in the browser to see the result.
