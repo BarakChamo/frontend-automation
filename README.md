@@ -29,6 +29,14 @@ Step-by-step instructions to setting up the development environment are availabl
 
 Each step branch poses a small challenge in configuring webpack and automating front-end development. If you want to see the full and *'solved'* configuration look at the code for each step in the `master` branch of this repository.
 
+### Workshop Chapters
+
+1. [Basic Webpack configuration and module bundling](https://github.com/BarakChamo/frontend-automation/tree/master/steps/step-1)
+2. [Module loaders and inline asset requirements](https://github.com/BarakChamo/frontend-automation/tree/master/steps/step-2)
+3. [Webpack Dev Server](https://github.com/BarakChamo/frontend-automation/tree/master/steps/step-3)
+4. [Module Chunk Splitting](https://github.com/BarakChamo/frontend-automation/tree/master/steps/step-4)
+5. []()
+
 ## Running the complete development environment
 
 #### Building the docker container
