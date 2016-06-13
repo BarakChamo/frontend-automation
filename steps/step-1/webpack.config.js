@@ -2,13 +2,13 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: {
-    app: './app/index.js'
+    app: '{ENTRY POINT HERE}'
   },
 
   output: {
     publicPath:'/dist/',
     path: __dirname + '/dist',
-    filename: 'bundle.js',
+    filename: '{OUTPUT FILENAME HERE}',
   },
 
   module: {

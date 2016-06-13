@@ -53,4 +53,12 @@ Open `index.html` in your browser, check that `Hello World` has been rendered co
 
 # Workshop Excercise
 
-Excercise details
+- Update the webpack configuration in `webpack.config.js` to point the `app` entry to the `index.js` file inside the `./app` folder.
+
+- Update the output filename so that the bundle created will be called `bundle.js`.
+
+- Look through index.html to see how the bundle is required.
+
+- Go ahead and run `webpack` to build the bundle.
+
+- Open index.html in the browser to test our Hello World example.
