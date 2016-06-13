@@ -1,0 +1,11 @@
+@import "../../../node_modules/bootstrap/dist/css/bootstrap.css";
+
+
+.gallery-image {
+  position: relative;
+  text-align: center;
+  margin: auto;
+  img {
+    width: auto;
+  }
+}

@@ -1,0 +1,21 @@
+li {
+  list-style: none;
+}
+
+.programming-language {
+   font-family: monospace;
+   padding: 1em;
+   background-color: lightgray;
+   border: 1px solid gray;
+   display: inline-block;
+   margin-bottom: 1em;
+
+   .name {
+     font-weight: bold;
+     display: block;
+   }
+
+   .creator {
+     font-style: italic;
+   }
+}
