@@ -1,4 +1,4 @@
-# Front-End Automation
+# Front-End Automation Workshop
 Workshop on Front-End Development Automation with Webpack and Docker.
 
 This is the excercise and demo repo for the Front-End Automation talk and workshop.
