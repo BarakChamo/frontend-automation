@@ -9,9 +9,9 @@ ADD . /usr/src/app/
 RUN cp -a /tmp/node_modules /usr/src/app/
 RUN npm run build
 
-ENV NODE_ENV=production
-ENV PORT=8080
+ENV NODE_ENV=
+ENV PORT=
 
 CMD [ "/usr/local/bin/npm", "start" ]
 
-EXPOSE 8080
+EXPOSE

@@ -112,6 +112,11 @@ or simply go to the container's ip in your browser.
 
 # Workshop Excercise
 
+- Complete the Dockerfile with the following:
+  - Set the environment to `production`
+  - Set the default port to `8080`
+  - Expose port `8080`
+
 - Run docker machine and evaluate it's IP parameters
 
 - Run the docker container in `development` mode, exposing it's port `8080` to the local machine's port `80`
