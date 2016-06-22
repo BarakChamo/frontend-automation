@@ -8,6 +8,7 @@ WORKDIR /usr/src/app
 ADD . /usr/src/app/
 RUN cp -a /tmp/node_modules /usr/src/app/
 RUN npm run build
+RUN npm install -g webpack
 
 ENV NODE_ENV=production
 ENV PORT=8080
