@@ -1,6 +1,7 @@
 /*
   Webpack production configuration
  */
+var webpack = require('webpack');
 
 // Import base configuration
 var config = require('./webpack.config.js');
