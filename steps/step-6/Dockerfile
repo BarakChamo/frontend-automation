@@ -7,8 +7,8 @@ RUN npm config set registry http://registry.npmjs.org/ && npm install -q --produ
 WORKDIR /usr/src/app
 ADD . /usr/src/app/
 RUN cp -a /tmp/node_modules /usr/src/app/
-RUN npm run build
 RUN npm install -g webpack
+RUN npm run build
 
 ENV NODE_ENV=
 ENV PORT=
